@@ -30,7 +30,6 @@ const MyselfImage = ({ alt }: MyselfImagProps) => {
         "lg:col-start-2 lg:w-[35vw] lg:max-w-none lg:pt-0",
         "xl:max-w-[520px]",
         "2xl:max-w-[650px]",
-        // "motion-opacity-in-0 motion-duration-1000 motion-delay-1000 motion-ease-spring-smooth",
       )}
     >
       <Image
@@ -42,7 +41,6 @@ const MyselfImage = ({ alt }: MyselfImagProps) => {
           loaded ? "opacity-100" : "opacity-0",
         )}
         onLoad={handleLoadingComplete}
-        priority
       />
     </div>
   );

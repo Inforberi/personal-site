@@ -55,11 +55,11 @@ export async function generateMetadata({ params }: { params: Params }) {
       type: "website",
       url: "/",
       siteName: "Frontend Developer",
-      images: `/seo/og-image/og-image-${locale}.jpg`,
+      images: `/seo/og-image/home/og-image-home-${locale}.jpg`,
     },
     locale: locale,
     alternates: {
-      canonical: "/",
+      canonical: "https://personal-site-one-coral.vercel.app/",
     },
     icons: {
       icon: [
