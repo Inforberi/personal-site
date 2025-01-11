@@ -1,10 +1,10 @@
 {
   "RootMetadata": {
-    "title": "Алексей, фронтенд-разработчик: React, Next.js | Создание современных веб-приложений",
-    "description": "Я опытный фронтенд-разработчик с глубоким знанием React, Next.js, Tailwind и TypeScript. Создаю адаптивные, анимированные веб-приложения с упором на производительность, UX/UI и SEO.",
-    "keywords": "фронтенд разработчик, React разработчик, Next.js разработчик, Tailwind CSS, TypeScript, GSAP, Motion, адаптивный дизайн, веб-анимации, SEO, Zustand, Zod, разработка веб-приложений, оптимизация сайта, современный UX/UI",
-    "ogTitle": "Алексей фронтенд-разработчик | React, Next.js, TypeScript",
-    "ogDescription": "Я фронтенд-разработчик с опытом работы с React, Next.js, Tailwind и TypeScript. Создаю адаптивные и анимированные веб-приложения с упором на производительность, современный дизайн и SEO."
+    "title": "Алексей - frontend-разработчик: React, Next.js | Создание современных веб-приложений",
+    "description": "Я опытный frontend-разработчик с глубоким знанием React, Next.js, Tailwind и TypeScript. Создаю адаптивные, анимированные веб-приложения с упором на производительность, UX/UI и SEO.",
+    "keywords": "frontend-разработчик, React разработчик, Next.js разработчик, Tailwind CSS, TypeScript, GSAP, Motion, адаптивный дизайн, веб-анимации, SEO, Zustand, Zod, разработка веб-приложений, оптимизация сайта, современный UX/UI",
+    "ogTitle": "Алексей - frontend-разработчик | React, Next.js, TypeScript",
+    "ogDescription": "Я frontend-разработчик с опытом работы с React, Next.js, Tailwind и TypeScript. Создаю адаптивные и анимированные веб-приложения с упором на производительность, современный дизайн и SEO."
   },
   "TodoListMetadata": {
     "title": "Todo List — Управление задачами: Удобный список дел с адаптивным дизайном",

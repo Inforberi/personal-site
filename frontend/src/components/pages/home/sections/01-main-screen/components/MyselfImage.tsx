@@ -24,7 +24,7 @@ const MyselfImage = ({ alt }: MyselfImagProps) => {
   return (
     <div
       className={cn(
-        "pointer-events-none col-start-1 row-start-1 w-[55vw] max-w-[220px] justify-self-end pt-18",
+        "pointer-events-none col-start-1 row-start-1 w-[53vw] max-w-[220px] justify-self-end pt-18",
         "sm500:max-w-[300px] sm500:pt-0",
         "sm:w-[58vw] sm:max-w-[370px] sm:pt-10",
         "lg:col-start-2 lg:w-[35vw] lg:max-w-none lg:pt-0",
