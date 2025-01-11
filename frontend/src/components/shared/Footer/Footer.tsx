@@ -27,9 +27,9 @@ const Footer = () => {
     <footer id="footer" className={cn("pt-24", "sm:pt-28", "2xl:pt-36")}>
       <div
         className={cn(
-          "space-y-8 border-t border-primary py-12",
-          "sm:space-y-10",
-          "lg:space-y-12 lg:border-t-2",
+          "space-y-10 border-t border-primary py-12",
+          "sm:space-y-12",
+          "lg:space-y-14 lg:border-t-2",
         )}
       >
         <div
