@@ -90,6 +90,7 @@ const ProjectItem = ({
               sizes="(min-width: 1024px) 45vw, (min-width: 640px) 80vw, 100vw"
               src={imageSrc}
               alt={title}
+              quality={100}
               fill
             />
           </a>
@@ -104,6 +105,7 @@ const ProjectItem = ({
               sizes="(min-width: 1024px) 45vw, (min-width: 640px) 80vw, 100vw"
               src={imageSrc}
               alt={title}
+              quality={100}
               fill
             />
           </TransitionLink>

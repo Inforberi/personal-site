@@ -29,7 +29,7 @@ const Stack = () => {
         <div
           className={cn(
             "grid gap-8",
-            "sm:grid-cols-2 sm:grid-rows-2 sm:gap-10",
+            "sm:grid-rows-auto sm:grid-cols-2 sm:gap-10",
             "lg:mx-auto lg:w-3/4 lg:gap-20",
             "xl:col-start-2 xl:w-auto",
           )}

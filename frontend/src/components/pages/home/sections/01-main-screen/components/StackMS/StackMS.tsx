@@ -60,7 +60,7 @@ const StackMS = ({ button }: StackMSProps) => {
         </div>
         <p
           className={cn(
-            "-order-1 font-title font-medium uppercase text-primary dark:text-primary",
+            "-order-1 whitespace-nowrap font-title font-medium uppercase text-primary dark:text-primary",
             "sm:text-2xl",
             "lg:order-none",
             "xl:text-4xl",
