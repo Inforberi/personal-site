@@ -1,72 +1,3 @@
-// "use client";
-
-// // styles
-// import { cn } from "@/utils/cn";
-
-// // next intl
-// import { usePathname, useRouter } from "@/i18n/routing";
-// import { useLocale } from "next-intl";
-
-// // hooks
-// import { useState, useCallback } from "react";
-
-// // types
-// import { Locale } from "@/types/types";
-// import SwitcherButtonWrapper from "./SwitcherButtonWrapper";
-
-// const locales: Locale[] = ["ru", "en"];
-
-// interface LanguageSwitcherProps {
-//   ariaLabel: string;
-// }
-
-// const LanguageSwitcher = ({ ariaLabel }: LanguageSwitcherProps) => {
-//   const pathname = usePathname();
-//   const router = useRouter();
-//   const currentLocale = useLocale();
-
-//   const [selectedLocale, setSelectedLocale] = useState<Locale>(
-//     currentLocale as Locale,
-//   );
-
-//   const handleToggleLanguage = useCallback(() => {
-//     const newLocale = selectedLocale === "ru" ? "en" : "ru";
-
-//     const app = document.querySelector(".app");
-
-//     app?.classList.add("page-transition");
-
-//     setTimeout(() => {
-//       router.replace(pathname, { locale: newLocale });
-//     }, 500);
-//     setSelectedLocale(newLocale);
-//   }, [selectedLocale, pathname, router]);
-
-//   return (
-//     <SwitcherButtonWrapper
-//       typeSwitcher="language"
-//       title={ariaLabel}
-//       ariaLabel={ariaLabel}
-//       onClick={handleToggleLanguage}
-//     >
-//       {locales.map((locale, index) => (
-//         <span
-//           key={index}
-//           className={cn(
-//             "col-start-1 row-start-1",
-//             currentLocale === locale
-//               ? "pointer-events-auto animate-fadeIn opacity-100"
-//               : "pointer-events-none opacity-0",
-//           )}
-//         >
-//           {locale}
-//         </span>
-//       ))}
-//     </SwitcherButtonWrapper>
-//   );
-// };
-
-// export default LanguageSwitcher;
 "use client";
 
 // styles
@@ -131,8 +62,8 @@ const LanguageSwitcher = ({ ariaLabel }: LanguageSwitcherProps) => {
           className={cn(
             "col-start-1 row-start-1",
             currentLocale === locale
-              ? "pointer-events-auto animate-fadeIn opacity-100"
-              : "pointer-events-none opacity-0",
+              ? "pointer-events-none opacity-0"
+              : "pointer-events-auto animate-fadeIn opacity-100",
           )}
         >
           {locale}
