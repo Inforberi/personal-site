@@ -10,7 +10,7 @@ const contacts = [
     href: "tel:89967987789",
   },
   {
-    title: "gmail.com",
+    title: "tatarchuk.a.s.1997@gmail.com",
     href: "mailto:tatarchuk.a.s.1997@gmail.com?subject=&amp;body=Здравствуйте!",
   },
 ];
@@ -34,16 +34,6 @@ const Contacts = () => {
       >
         КОНТАКТЫ:
       </h3>
-      {/* <ul className={cn("flex gap-7", "lg:gap-6", "2xl:gap-8")}>
-        {socials.map((social, index) => (
-          <SocialIcon
-            href={social.href}
-            ariaLabel={social.ariaLabel}
-            key={index}
-            icon={social.icon}
-          />
-        ))}
-      </ul> */}
       <SocialList />
       <ul className={cn("flex flex-col items-center justify-center gap-3")}>
         {contacts.map((contact, index) => (
