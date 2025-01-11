@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input,
+  button,
+  textarea {
+    @apply outline-none;
+  }
+}
+
+:root {
+  --color-primary: #7de300;
+}
+
+:root[data-theme="dark"] {
+  --color-primary: #85e600;
+}
+
+.app {
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+}
+
+:root {
+  --animation-ease-back: cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+}
+
+.page-transition {
+  opacity: 1;
+  transform: translateY(0);
+}

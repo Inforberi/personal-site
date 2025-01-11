@@ -1,0 +1,193 @@
+{
+  "RootMetadata": {
+    "title": "Alexey, Frontend Developer: React, Next.js | Modern Web Application Development",
+    "description": "I am an experienced frontend developer with in-depth knowledge of React, Next.js, Tailwind, and TypeScript. I create responsive, animated web applications focusing on performance, UX/UI, and SEO.",
+    "keywords": "frontend developer, React developer, Next.js developer, Tailwind CSS, TypeScript, GSAP, Motion, responsive design, web animations, SEO, Zustand, Zod, web application development, website optimization, modern UX/UI",
+    "ogTitle": "Alexey Frontend Developer | React, Next.js, TypeScript",
+    "ogDescription": "I am a frontend developer experienced in React, Next.js, Tailwind, and TypeScript. I create responsive and animated web applications focusing on performance, modern design, and SEO."
+  },
+  "TodoListMetadata": {
+    "title": "Todo List — Task Management: Convenient To-Do List with Responsive Design",
+    "description": "Organize your tasks with a convenient Todo List. Features include adding, editing, deleting tasks, filters, and responsive design. Built with React, TypeScript, and Tailwind for speed and functionality.",
+    "keywords": "todo list, task management, to-do app, React todo, TypeScript todo, responsive to-do list, modern design, filtered task list, simple task management",
+    "ogTitle": "Todo List — Convenient Tool for Task Management",
+    "ogDescription": "Todo List for organizing daily tasks. Modern interface, filters, and real-time management. Built with React and TypeScript using a responsive design."
+  },
+  "Header": {
+    "navLinks": {
+      "main": "Home",
+      "todo": "ToDo List",
+      "weather": "Weather"
+    },
+    "themeSwitcher": {
+      "ariaLabel": "Toggle theme",
+      "light": {
+        "alt": "Sun"
+      },
+      "dark": {
+        "alt": "Moon"
+      }
+    },
+    "languageSwitcher": {
+      "ariaLabel": "Switch language"
+    }
+  },
+  "Footer": {
+    "main": "Home",
+    "todo": "Todo List",
+    "privacy": "© All rights reserved. {currentYear}"
+  },
+  "HomePage": {
+    "mainScreen": {
+      "title": "Developer",
+      "stack": "Tech stack",
+      "text": "Hi! My name is Alexey. I have experience working with React, Next.js, and TypeScript. I specialize in creating responsive, SEO-optimized interfaces, focusing on performance and user convenience.",
+      "buttons": {
+        "button1": "Download resume",
+        "button2": "Contact me"
+      },
+      "imageAlt": "A personal photo of Alexey, a web developer"
+    },
+    "about": {
+      "title": "About me",
+      "text1": "I develop web applications using the Next.js framework and styling technologies like Tailwind CSS, SCSS, and CSS Modules, delivering scalable and adaptable solutions for various devices.",
+      "text2": "In my work, I also utilize Docker for project deployment and management, ensuring stable and flexible infrastructure. I am open to new challenges and constantly strive to expand my knowledge. I actively seek ways to optimize processes and enhance user interactions, aiming to create highly efficient and user-friendly solutions."
+    },
+    "stack": {
+      "title": "Tech stack",
+      "text": "I write clear, concise, and reliable code that works. I am proficient in reading and understanding technical documentation in English.",
+      "technologyList": {
+        "web": {
+          "title": "Technologies:",
+          "technologies": "HTML, CSS, SCSS, Tailwind, React, Next.js, TypeScript."
+        },
+        "lib": {
+          "title": "Libraries:",
+          "technologies": "Zustand, React Hook Form, Zod, React Modal, Embla Carousel, Next Intl."
+        },
+        "animation": {
+          "title": "Animations:",
+          "technologies": "GSAP, Motion, Lenis Scroll"
+        },
+        "tools": {
+          "title": "Tools:",
+          "technologies": "Git, Docker, Figma, Photoshop"
+        }
+      }
+    },
+    "projects": {
+      "title": "Projects",
+      "projectList": {
+        "project1": {
+          "title": "Website for a Web Studio",
+          "description": "This website was developed using Next.js, LenisScroll for smooth scrolling, and GSAP for scroll-based animations. The project also incorporates React Hook Form and Yup for form validation, with data submission to Email/Telegram implemented via Express."
+        },
+        "project2": {
+          "title": "Website for a celebrity makeup artist",
+          "description": "This website includes over 15 pages, featuring a photo gallery for convenient portfolio browsing. The project is performance-oriented, achieving a score of over 92 points in Performance metrics."
+        },
+        "project3": {
+          "title": "Todo list",
+          "description": "Built on Next.js 15.1, this project integrates Next Intl and supports theme switching via cookies. Performance optimization techniques, such as memo and useMemo, were used to minimize re-renders. Zustand manages the state, tasks are stored in localStorage, and task filtering is included."
+        }
+      }
+    },
+    "experience": {
+      "title": "Experience",
+      "text1": "Since 2023, I have worked at a web studio where I developed client interfaces for various projects, ensuring high quality and user-friendly interactions. In close collaboration with the designer, I implemented responsive designs, following Figma layouts precisely. My primary contribution was creating the frontend, adhering to technical requirements and enhancing UX. I was also actively involved in website optimization and testing new features.",
+      "text2": "To develop adaptive and cross-browser websites, I used Next.js and implemented creative animations using libraries like GSAP and Motion, enhancing visual effects and user interactions. For infrastructure stability and scalability, I utilized Docker to deploy websites on VPS, enabling efficient project management and ensuring their seamless operation."
+    }
+  },
+  "TodoApp": {
+    "todoList": {
+      "title": "Manage tasks easily: With ToDo",
+      "addTask": {
+        "title": "My Tasks",
+        "placeholder": "Add a new task...",
+        "button": "Add"
+      },
+      "navTodoList": {
+        "all": "All tasks",
+        "current": "Active",
+        "completed": "Completed"
+      },
+      "taskItem": {
+        "text": {
+          "completed": "To do",
+          "notCompleted": "Done"
+        },
+        "ariaLabels": {
+          "remove": "Delete",
+          "edit": "Edit",
+          "save": "Save",
+          "complete": "Complete / Cancel"
+        }
+      },
+      "emptyMessages": {
+        "completed": "Time to start working on your current tasks, if any!",
+        "notCompleted": "No tasks found. Either they haven't been created yet, or you've already completed them all!",
+        "all": "Your task list is still empty. Start with the first one and move towards productivity!"
+      }
+    },
+    "todoDocs": {
+      "title": "Technical Documentation: ToDo List",
+      "todoDescription": {
+        "title": "Project Description:",
+        "text": "ToDo List is a task management application implemented in Next.js using the App Router. It provides an interactive user interface with filtering, animations, and local data storage."
+      },
+      "todoTechnologies": {
+        "title": "Technologies Used:"
+      },
+      "howTodoWorks": {
+        "title": "Application Architecture and Functionality",
+        "howTodoWorksList": {
+          "storage": {
+            "title": "Storage (Zustand)",
+            "descriptionList": {
+              "item1": "Creation of global state using Zustand for centralized data management.",
+              "item2": "Adding, editing, and deleting tasks with immediate state updates without re-rendering the entire list.",
+              "item3": "Separation of logical (realCompleted) and animated (animationCompleted) states to ensure smooth transitions and responsive interface.",
+              "item4": "LocalStorage is used to persist task data and current filters, allowing the state to be restored after a page reload."
+            }
+          },
+          "ui": {
+            "title": "User Interface",
+            "descriptionList": {
+              "item1": "Controlled components for data entry ensure validation and prevent errors when adding tasks.",
+              "item2": "Dynamic generation of task list with support for responsive display and filtering.",
+              "item3": "Saving the current filter in LocalStorage allows user preferences to be preserved upon page reload or revisits.",
+              "item4": "Mobile device support and responsive design for comfortable use on various screen sizes.",
+              "item5": "Intuitive buttons for managing tasks and filtering to enhance usability."
+            }
+          },
+          "animation": {
+            "title": "Animations (Motion)",
+            "descriptionList": {
+              "item1": "Animations for task addition and deletion, improving visual feedback on list changes.",
+              "item2": "500 ms delay when switching task states to ensure synchronous completion of animations and state changes.",
+              "item3": "Transition effects and smooth changes during task filtering to increase interactivity.",
+              "item4": "Using Motion for flexible animation configuration, including element fade-in and fade-out."
+            }
+          },
+          "filter": {
+            "title": "Task Filtering",
+            "descriptionList": {
+              "item1": "Dynamic filtering of tasks by status (active, completed, all tasks) with immediate interface response.",
+              "item2": "Saving the selected filter in LocalStorage for user convenience and restoring preferences upon revisits.",
+              "item3": "Support for combined filtering, including search and sorting by date added or completion status."
+            }
+          }
+        }
+      },
+      "results": {
+        "title": "Project Summary",
+        "text": "The ToDo List project is a modern task management application built on Next.js using Zustand, Motion, and TailwindCSS.",
+        "list": {
+          "item1": "<bold>Flexible state management</bold> with Zustand and data persistence in LocalStorage for longevity.",
+          "item2": "<bold>Smooth animations</bold> and interactivity with Motion, enhancing the user experience.",
+          "item3": "<bold>Responsive and intuitive design</bold> based on TailwindCSS for ease of use on any device."
+        }
+      }
+    }
+  }
+}
