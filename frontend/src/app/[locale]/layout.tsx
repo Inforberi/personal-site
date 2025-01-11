@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   const t = await getTranslations({ locale, namespace: "RootMetadata" });
 
   return {
-    metadataBase: "http://localhost:3000",
+    metadataBase: "https://personal-site-one-coral.vercel.app/",
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
@@ -107,7 +107,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       data-theme={theme}
-      className="scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent relative"
+      className="relative scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary"
     >
       <body
         className={`${unbounded.variable} ${montserrat.variable} scroll-smooth bg-background-light font-primary font-normal text-black antialiased transition-colors duration-300 selection:bg-green-700 selection:text-white dark:bg-background-dark dark:text-white`}
