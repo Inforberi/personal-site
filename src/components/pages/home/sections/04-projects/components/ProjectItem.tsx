@@ -4,8 +4,8 @@
 import { cn } from "@/utils/cn";
 
 // animation
-import { motion, useScroll, useTransform } from "framer-motion";
-
+import { motion } from "motion/react";
+import { useScroll, useTransform } from "motion/react";
 // hooks
 import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";

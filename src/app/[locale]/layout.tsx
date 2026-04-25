@@ -23,6 +23,7 @@ import {
   getTranslations,
 } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import GsapProvider from "@/components/shared/gsap/GsapProvider";
 
 const unbounded = Unbounded({
   weight: ["400", "500", "600"],
@@ -112,23 +113,25 @@ export default async function LocaleLayout({
       <body
         className={`${unbounded.variable} ${montserrat.variable} scroll-smooth bg-background-light font-primary font-normal text-black antialiased transition-colors duration-300 selection:bg-green-700 selection:text-white dark:bg-background-dark dark:text-white`}
       >
-        <ThemeProvider initialTheme={theme}>
-          <NextIntlClientProvider messages={messages}>
-            <div
-              className={cn(
-                "mx-auto grid min-h-screen max-w-screen-3xl grid-cols-1 grid-rows-[auto_1fr_auto] overflow-x-hidden px-5",
-                "sm:px-8",
-                "lg:px-14",
-                "xl:px-20",
-                "2xl:px-24",
-              )}
-            >
-              <Header />
-              <main className="app">{children}</main>
-              <Footer />
-            </div>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <GsapProvider>
+          <ThemeProvider initialTheme={theme}>
+            <NextIntlClientProvider messages={messages}>
+              <div
+                className={cn(
+                  "mx-auto grid min-h-screen max-w-screen-3xl grid-cols-1 grid-rows-[auto_1fr_auto] overflow-x-hidden px-5",
+                  "sm:px-8",
+                  "lg:px-14",
+                  "xl:px-20",
+                  "2xl:px-24",
+                )}
+              >
+                <Header />
+                <main className="app">{children}</main>
+                <Footer />
+              </div>
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </GsapProvider>
       </body>
     </html>
   );
