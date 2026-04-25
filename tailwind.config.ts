@@ -73,5 +73,5 @@ export default {
       },
     },
   },
-  plugins: [scrollbarHide, tailwindcssMotion, tailwindScrollbar],
+  plugins: [scrollbarHide, tailwindScrollbar],
 } satisfies Config;

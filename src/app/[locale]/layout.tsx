@@ -3,7 +3,7 @@ import "../../styles/globals.css";
 import { cn } from "@/utils/cn";
 
 // types
-import { ChildrenLocale, Locale, Theme, Params } from "@/types/types";
+import type { Locale, Theme, Params, ChildrenLocale } from "@/types/types";
 
 // hooks
 import { cookies } from "next/headers";
@@ -14,6 +14,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/shared/header/Header";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import Footer from "@/components/shared/Footer/Footer";
+import GsapProvider from "@/components/shared/gsap/GsapProvider";
 
 // next intl
 import { NextIntlClientProvider } from "next-intl";
@@ -23,7 +24,6 @@ import {
   getTranslations,
 } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import GsapProvider from "@/components/shared/gsap/GsapProvider";
 
 const unbounded = Unbounded({
   weight: ["400", "500", "600"],
@@ -37,16 +37,30 @@ const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
 });
 
+const locales = ["ru", "en"] satisfies Locale[];
+
+const isLocale = (locale: string): locale is Locale => {
+  return locales.includes(locale as Locale);
+};
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }: { params: Params }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "RootMetadata" });
+
+  if (!isLocale(locale)) {
+    notFound();
+  }
+
+  const t = await getTranslations({
+    locale,
+    namespace: "RootMetadata",
+  });
 
   return {
-    metadataBase: "https://personal-site-one-coral.vercel.app/",
+    metadataBase: new URL("https://personal-site-one-coral.vercel.app"),
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
@@ -58,9 +72,9 @@ export async function generateMetadata({ params }: { params: Params }) {
       siteName: "Frontend Developer",
       images: `/seo/og-image/home/og-image-home-${locale}.jpg`,
     },
-    locale: locale,
+    locale,
     alternates: {
-      canonical: "https://personal-site-one-coral.vercel.app/",
+      canonical: "/",
     },
     icons: {
       icon: [
@@ -94,15 +108,17 @@ export default async function LocaleLayout({
 }: ChildrenLocale) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as Locale)) {
+  if (!isLocale(locale)) {
     notFound();
   }
+
   setRequestLocale(locale);
 
   const messages = await getMessages();
-
   const cookieStore = await cookies();
-  const theme: Theme = (cookieStore.get("theme")?.value as Theme) || "dark";
+
+  const themeValue = cookieStore.get("theme")?.value;
+  const theme: Theme = themeValue === "light" ? "light" : "dark";
 
   return (
     <html
@@ -111,7 +127,11 @@ export default async function LocaleLayout({
       className="relative scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary"
     >
       <body
-        className={`${unbounded.variable} ${montserrat.variable} scroll-smooth bg-background-light font-primary font-normal text-black antialiased transition-colors duration-300 selection:bg-green-700 selection:text-white dark:bg-background-dark dark:text-white`}
+        className={cn(
+          unbounded.variable,
+          montserrat.variable,
+          "scroll-smooth bg-background-light font-primary font-normal text-black antialiased transition-colors duration-300 selection:bg-green-700 selection:text-white dark:bg-background-dark dark:text-white",
+        )}
       >
         <GsapProvider>
           <ThemeProvider initialTheme={theme}>
