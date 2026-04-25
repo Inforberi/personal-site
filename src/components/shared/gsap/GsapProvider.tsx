@@ -1,5 +1,6 @@
 "use client";
 
+import { loadGsap } from "@/utils/loadGsap";
 import { useEffect, useRef, type ReactNode } from "react";
 
 type Props = {
@@ -15,17 +16,11 @@ const GsapProvider = ({ children }: Props) => {
     let mounted = true;
 
     const initGsap = async () => {
-      const { gsap } = await import("gsap");
-      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-      const { ScrollSmoother } = await import("gsap/ScrollSmoother");
+      const gsap = await loadGsap();
 
-      if (!mounted) return;
+      if (!mounted || !wrapperRef.current || !contentRef.current) return;
 
-      gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-      if (!wrapperRef.current || !contentRef.current) return;
-
-      smoother = ScrollSmoother.create({
+      smoother = gsap.ScrollSmoother.create({
         wrapper: wrapperRef.current,
         content: contentRef.current,
         smooth: 1,
