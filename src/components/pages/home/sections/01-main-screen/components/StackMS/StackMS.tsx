@@ -68,7 +68,7 @@ const StackMS = ({ button }: StackMSProps) => {
             "motion-opacity-in-0 motion-duration-2000 motion-delay-500 motion-ease-spring-smooth",
           )}
         >
-          React/next.js
+          next.js/go
         </p>
       </div>
     </div>

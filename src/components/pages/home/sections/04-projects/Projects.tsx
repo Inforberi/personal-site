@@ -19,7 +19,7 @@ const Projects = () => {
   const projects = [
     {
       project: "project1",
-      link: "https://prime-x-studio.ru/",
+      link: "https://primexstudio.ru/",
       image: project1,
     },
     {

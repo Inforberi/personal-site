@@ -1,10 +1,10 @@
 {
   "RootMetadata": {
-    "title": "Alexey — Frontend Developer: React, Next.js | Modern Web Application Development",
-    "description": "I am an experienced frontend developer with in-depth knowledge of React, Next.js, Tailwind, and TypeScript. I create responsive, animated web applications focusing on performance, UX/UI, and SEO.",
-    "keywords": "frontend developer, React developer, Next.js developer, Tailwind CSS, TypeScript, GSAP, Motion, responsive design, web animations, SEO, Zustand, Zod, web application development, website optimization, modern UX/UI",
-    "ogTitle": "Alexey — Frontend Developer | React, Next.js, TypeScript",
-    "ogDescription": "I am a frontend developer experienced in React, Next.js, Tailwind, and TypeScript. I create responsive and animated web applications focusing on performance, modern design, and SEO."
+    "title": "Alexey — fullstack Developer: Next.js, Golang | Modern Web Application Development",
+    "description": "I am an experienced fullstack developer with in-depth knowledge of Next.js, Golang, Tailwind, and TypeScript. I create responsive, animated web applications focusing on performance, UX/UI, and SEO.",
+    "keywords": "fullstack developer, React developer, Next.js developer, Tailwind CSS, TypeScript, GSAP, Motion, responsive design, web animations, SEO, Zustand, Zod, web application development, website optimization, modern UX/UI",
+    "ogTitle": "Alexey — Fullstack Developer | Next.js, Golang, TypeScript",
+    "ogDescription": "I am a fullstack developer experienced in React, Next.js, Tailwind, and TypeScript. I create responsive and animated web applications focusing on performance, modern design, and SEO."
   },
   "TodoListMetadata": {
     "title": "Todo List — Task Management: Convenient To-Do List with Responsive Design",
@@ -41,7 +41,7 @@
     "mainScreen": {
       "title": "Developer",
       "stack": "Tech stack",
-      "text": "Hi! My name is Alexey. I have experience working with React, Next.js, and TypeScript. I specialize in creating responsive, SEO-optimized interfaces, focusing on performance and user convenience.",
+      "text": "Develop fast, SEO-optimized web applications using Next.js and SvelteKit.Build responsive interfaces from Figma, improving UX, Core Web Vitals, and achieving 90+ Lighthouse scores. Work with APIs and CMS (Strapi, PostgreSQL), and design and implement high-performance backend systems in Go with PostgreSQL and Redis, focusing on stability and efficiency.",
       "buttons": {
         "button1": "Download resume",
         "button2": "Contact me"
@@ -50,8 +50,8 @@
     },
     "about": {
       "title": "About me",
-      "text1": "I develop web applications using the Next.js framework and styling technologies like Tailwind CSS, SCSS, and CSS Modules, delivering scalable and adaptable solutions for various devices.",
-      "text2": "In my work, I also utilize Docker for project deployment and management, ensuring stable and flexible infrastructure. I am open to new challenges and constantly strive to expand my knowledge. I actively seek ways to optimize processes and enhance user interactions, aiming to create highly efficient and user-friendly solutions."
+      "text1": "Over 3+ years in commercial development, progressed from layout implementation to building complex frontend solutions: developed pages from scratch based on Figma designs, rewrote legacy projects, improved architecture, and brought Core Web Vitals into the green zone, directly impacting organic traffic growth and product stability.",
+      "text2": "Handle not only frontend but also adjacent tasks: set up Strapi and APIs, optimized data fetching and loading, implemented ISR and SSR, developed backend services in Go for monitoring and automation, built internal dashboards and integrations, working in a small team and being responsible for results — from performance to business metrics."
     },
     "stack": {
       "title": "Tech stack",
@@ -59,7 +59,7 @@
       "technologyList": {
         "web": {
           "title": "Technologies:",
-          "technologies": "HTML, CSS, SCSS, Tailwind, React, Next.js, TypeScript."
+          "technologies": "Next.js, React, HTML, CSS, SCSS, Tailwind, Golang, PostgreSQL, Redis, TypeScript."
         },
         "lib": {
           "title": "Libraries:",
@@ -79,23 +79,27 @@
       "title": "Projects",
       "projectList": {
         "project1": {
+          "title": "Website for studio-54",
+          "description": "A premium website for an international architectural bureau, focused on demonstrating high-level projects. Implemented on SvelteKit with a focus on performance and fast interface response. Smooth animations and scrolling effects are used to enhance the perception of the content and create the feeling of an expensive digital product."
+        },
+        "project2": {
+          "title": "Website for fiftyfourms",
+          "description": "A premium website for furniture with an emphasis on performance and stable interface operation. Implemented on Next.js using ISR, which allows you to efficiently update content and maintain high page loading speed. A well-thought-out catalog structure and optimization ensure comfortable interaction with large amounts of data."
+        },
+        "project3": {
           "title": "Website for a Web Studio",
           "description": "This website was developed using Next.js, LenisScroll for smooth scrolling, and GSAP for scroll-based animations. The project also incorporates React Hook Form and Yup for form validation, with data submission to Email/Telegram implemented via Express."
         },
-        "project2": {
+        "project4": {
           "title": "Website for a celebrity makeup artist",
           "description": "This website includes over 15 pages, featuring a photo gallery for convenient portfolio browsing. The project is performance-oriented, achieving a score of over 92 points in Performance metrics."
-        },
-        "project3": {
-          "title": "Todo list",
-          "description": "Built on Next.js 15.1, this project integrates Next Intl and supports theme switching via cookies. Performance optimization techniques, such as memo and useMemo, were used to minimize re-renders. Zustand manages the state, tasks are stored in localStorage, and task filtering is included."
         }
       }
     },
     "experience": {
       "title": "Experience",
-      "text1": "Since 2023, I have worked at a web studio where I developed client interfaces for various projects, ensuring high quality and user-friendly interactions. In close collaboration with the designer, I implemented responsive designs, following Figma layouts precisely. My primary contribution was creating the frontend, adhering to technical requirements and enhancing UX. I was also actively involved in website optimization and testing new features.",
-      "text2": "To develop adaptive and cross-browser websites, I used Next.js and implemented creative animations using libraries like GSAP and Motion, enhancing visual effects and user interactions. For infrastructure stability and scalability, I utilized Docker to deploy websites on VPS, enabling efficient project management and ensuring their seamless operation."
+      "text1": "Since 2023, working in commercial development: started with implementing interfaces based on Figma designs, then moved to more complex tasks including rewriting legacy projects, structuring applications, and contributing to product development where not only visuals matter, but also stability, performance, and maintainability.",
+      "text2": "Over time, took on a broader scope of responsibilities, from building key pages and complex interfaces to setting up CMS, APIs, and backend services in Go, as well as implementing internal tools and integrations, working in a small team and impacting not just the codebase, but how the product evolves, scales, and performs in production."
     }
   },
   "TodoApp": {
