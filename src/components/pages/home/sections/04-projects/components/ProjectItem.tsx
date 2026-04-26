@@ -6,7 +6,6 @@ import { cn } from "@/utils/cn";
 // hooks
 import { useEffect, useRef } from "react";
 import Image, { StaticImageData } from "next/image";
-import TransitionLink from "@/components/shared/TransitionLink/TransitionLink";
 
 // components
 import P from "@/components/shared/htmlTegs/P";
@@ -16,7 +15,6 @@ interface ProjectItemProps {
   index: number;
   title: string;
   description: string;
-  link: string;
   imageSrc: StaticImageData;
 }
 
@@ -24,7 +22,6 @@ const ProjectItem = ({
   index,
   title,
   description,
-  link = "/",
   imageSrc,
 }: ProjectItemProps) => {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -80,8 +77,6 @@ const ProjectItem = ({
   const even = index % 2 === 0;
   const direction = even ? "-" : "";
 
-  const isExternal = link?.startsWith("http");
-
   return (
     <div
       ref={rootRef}
@@ -108,40 +103,16 @@ const ProjectItem = ({
             : "translate-x-[20%] rotate-12",
         )}
       >
-        {isExternal ? (
-          // Внешняя ссылка
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={title}
-            className="relative block h-full w-full"
-          >
-            <Image
-              sizes="(min-width: 1024px) 45vw, (min-width: 640px) 80vw, 100vw"
-              src={imageSrc}
-              alt={title}
-              quality={100}
-              fill
-              className="object-cover"
-            />
-          </a>
-        ) : (
-          // Внутренняя ссылка
-          <TransitionLink
-            aria-label={title}
-            className="relative block h-full w-full"
-            href={link}
-          >
-            <Image
-              sizes="(min-width: 1024px) 45vw, (min-width: 640px) 80vw, 100vw"
-              src={imageSrc}
-              alt={title}
-              quality={100}
-              fill
-            />
-          </TransitionLink>
-        )}
+        <div aria-label={title} className="relative block h-full w-full">
+          <Image
+            sizes="(min-width: 1024px) 45vw, (min-width: 640px) 80vw, 100vw"
+            src={imageSrc}
+            alt={title}
+            quality={100}
+            fill
+            className="object-cover"
+          />
+        </div>
       </div>
 
       {/* Текст */}

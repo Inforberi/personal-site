@@ -20,22 +20,18 @@ const Projects = () => {
   const projects = [
     {
       project: "project2",
-      link: "https://fiftyfourms.com/",
       image: project2,
     },
     {
       project: "project1",
-      link: "https://studia-54.com/",
       image: project1,
     },
     {
       project: "project3",
-      link: "https://primexstudio.ru/",
       image: project3,
     },
     {
       project: "project4",
-      link: "https://oamericana.com/",
       image: project4,
     },
   ] as const;
@@ -51,7 +47,6 @@ const Projects = () => {
               index={index}
               title={t(`projectList.${project.project}.title`)}
               description={t(`projectList.${project.project}.description`)}
-              link={project.link}
               imageSrc={project.image}
             />
           </li>
