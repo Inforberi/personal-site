@@ -6,9 +6,10 @@ import SectionTitle from "../../shared/SectionTitle/SectionTitle";
 import ProjectItem from "./components/ProjectItem";
 
 // images
-import project1 from "/public/home/projects/web-studio.jpg";
-import project2 from "/public/home/projects/o-americana.jpg";
-import project3 from "/public/home/projects/todo-list.jpg";
+import project1 from "/public/home/projects/studia.webp";
+import project2 from "/public/home/projects/fifty.webp";
+import project3 from "/public/home/projects/web-studio.webp";
+import project4 from "/public/home/projects/o-americana.webp";
 
 // next intl
 import { useTranslations } from "next-intl";
@@ -18,19 +19,24 @@ const Projects = () => {
 
   const projects = [
     {
-      project: "project1",
-      link: "https://primexstudio.ru/",
-      image: project1,
-    },
-    {
       project: "project2",
-      link: "https://oamericana.com/",
+      link: "https://fiftyfourms.com/",
       image: project2,
     },
     {
+      project: "project1",
+      link: "https://studia-54.com/",
+      image: project1,
+    },
+    {
       project: "project3",
-      link: "/todo-list",
+      link: "https://primexstudio.ru/",
       image: project3,
+    },
+    {
+      project: "project4",
+      link: "https://oamericana.com/",
+      image: project4,
     },
   ] as const;
 

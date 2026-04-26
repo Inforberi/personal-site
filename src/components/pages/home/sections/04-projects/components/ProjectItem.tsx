@@ -4,7 +4,7 @@
 import { cn } from "@/utils/cn";
 
 // hooks
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import TransitionLink from "@/components/shared/TransitionLink/TransitionLink";
 
@@ -123,6 +123,7 @@ const ProjectItem = ({
               alt={title}
               quality={100}
               fill
+              className="object-cover"
             />
           </a>
         ) : (
