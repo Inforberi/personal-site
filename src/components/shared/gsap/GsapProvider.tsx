@@ -5,13 +5,16 @@ import { useEffect, useRef, type ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
+  isMobile: boolean;
 };
 
-const GsapProvider = ({ children }: Props) => {
+const GsapProvider = ({ children, isMobile }: Props) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (isMobile) return;
+
     let smoother: { kill: () => void } | null = null;
     let mounted = true;
 
@@ -25,7 +28,7 @@ const GsapProvider = ({ children }: Props) => {
         content: contentRef.current,
         smooth: 1,
         effects: true,
-        normalizeScroll: true,
+        normalizeScroll: false,
       });
     };
 
@@ -35,7 +38,7 @@ const GsapProvider = ({ children }: Props) => {
       mounted = false;
       smoother?.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div id="smooth-wrapper" ref={wrapperRef}>

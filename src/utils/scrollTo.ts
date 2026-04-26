@@ -5,5 +5,15 @@ export const scrollTo = (elementId: string) => {
 
   if (smoother) {
     smoother.scrollTo(`#${elementId}`, true, "top top");
+    return;
+  }
+
+  const element = document.getElementById(elementId);
+
+  if (element) {
+    window.scrollTo({
+      top: element.offsetTop,
+      behavior: "smooth",
+    });
   }
 };

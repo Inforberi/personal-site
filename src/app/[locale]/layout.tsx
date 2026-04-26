@@ -6,7 +6,7 @@ import { cn } from "@/utils/cn";
 import type { Locale, Theme, Params, ChildrenLocale } from "@/types/types";
 
 // hooks
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { Unbounded, Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 
@@ -116,6 +116,13 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
   const cookieStore = await cookies();
+  const headersList = await headers();
+
+  const userAgent = headersList.get("user-agent") || "";
+
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(
+    userAgent,
+  );
 
   const themeValue = cookieStore.get("theme")?.value;
   const theme: Theme = themeValue === "light" ? "light" : "dark";
@@ -133,7 +140,7 @@ export default async function LocaleLayout({
           "scroll-smooth bg-background-light font-primary font-normal text-black antialiased transition-colors duration-300 selection:bg-green-700 selection:text-white dark:bg-background-dark dark:text-white",
         )}
       >
-        <GsapProvider>
+        <GsapProvider isMobile={isMobile}>
           <ThemeProvider initialTheme={theme}>
             <NextIntlClientProvider messages={messages}>
               <div
