@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 // image
-import myPhoto from "/public/home/main-screen/my-photo.png";
+import myPhoto from "/public/home/main-screen/my-photo.webp";
 
 interface MyselfImagProps {
   alt: string;

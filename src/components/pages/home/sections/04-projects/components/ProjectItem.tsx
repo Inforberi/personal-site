@@ -4,7 +4,7 @@
 import { cn } from "@/utils/cn";
 
 // hooks
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import TransitionLink from "@/components/shared/TransitionLink/TransitionLink";
 
