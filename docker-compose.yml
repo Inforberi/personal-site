@@ -1,0 +1,92 @@
+services:
+  traefik:
+    image: traefik:v3.2
+    container_name: traefik
+    restart: unless-stopped
+    command:
+      - --api.dashboard=true
+      - --api.insecure=false
+
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+
+      - --certificatesresolvers.letsencrypt.acme.email=admin@inforberi.ru
+      - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
+      - --certificatesresolvers.letsencrypt.acme.httpchallenge=true
+      - --certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web
+
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./letsencrypt:/letsencrypt
+
+    networks:
+      - web
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: inforberi-app
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+
+    labels:
+      - traefik.enable=true
+
+      # Main router
+      - traefik.http.routers.inforberi.rule=Host(`inforberi.ru`) || Host(`www.inforberi.ru`)
+      - traefik.http.routers.inforberi.entrypoints=websecure
+      - traefik.http.routers.inforberi.tls=true
+      - traefik.http.routers.inforberi.tls.certresolver=letsencrypt
+      - traefik.http.routers.inforberi.middlewares=www-redirect,security-headers
+
+      # App port
+      - traefik.http.services.inforberi.loadbalancer.server.port=3000
+
+      # Redirect www -> non-www
+      - traefik.http.middlewares.www-redirect.redirectregex.regex=^https://www\.(.*)
+      - traefik.http.middlewares.www-redirect.redirectregex.replacement=https://$${1}
+      - traefik.http.middlewares.www-redirect.redirectregex.permanent=true
+
+      # Security headers
+      - traefik.http.middlewares.security-headers.headers.stsSeconds=31536000
+      - traefik.http.middlewares.security-headers.headers.stsIncludeSubdomains=true
+      - traefik.http.middlewares.security-headers.headers.stsPreload=true
+      - traefik.http.middlewares.security-headers.headers.forceSTSHeader=true
+      - traefik.http.middlewares.security-headers.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.security-headers.headers.browserXssFilter=true
+      - traefik.http.middlewares.security-headers.headers.referrerPolicy=strict-origin-when-cross-origin
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000').then(()=>process.exit(0)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
